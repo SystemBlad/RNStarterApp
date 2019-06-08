@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import NavigationService from 'App/Services/NavigationService'
 import AppNavigator from 'App/Navigators/AppNavigator'
@@ -5,9 +6,12 @@ import { View } from 'react-native'
 import styles from './RootScreenStyle'
 import { connect } from 'react-redux'
 import StartupActions from 'App/Stores/Startup/Actions'
-import { PropTypes } from 'prop-types'
 
-class RootScreen extends Component {
+type Props = {
+  startup: Function,
+}
+
+class RootScreen extends Component<Props> {
   componentDidMount() {
     // Run the startup saga when the application is starting
     this.props.startup()
@@ -25,10 +29,6 @@ class RootScreen extends Component {
       </View>
     )
   }
-}
-
-RootScreen.propTypes = {
-  startup: PropTypes.func,
 }
 
 const mapStateToProps = (state) => ({})

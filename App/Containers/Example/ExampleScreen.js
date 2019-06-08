@@ -16,7 +16,7 @@ import { Images } from 'App/Theme'
  */
 
 type Props = {
-  fetchUser: () => void,
+  fetchUser: Function,
   userIsLoading: boolean,
   userErrorMessage: string,
   user: Object,
