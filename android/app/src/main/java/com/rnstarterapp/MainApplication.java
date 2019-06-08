@@ -1,4 +1,4 @@
-package com.boilerplate;
+package com.rnstarterapp;
 
 import android.app.Application;
 
