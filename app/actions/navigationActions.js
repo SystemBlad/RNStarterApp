@@ -1,8 +1,8 @@
 /*
  * Reducer actions related with navigation
  */
-import NavigationService from 'app/navigation/NavigationService';
+import NavigationService from 'app/navigation/NavigationService'
 
 export function navigateToHome(params) {
-    NavigationService.navigate('Home', params);
+  NavigationService.navigate('Home', params)
 }
