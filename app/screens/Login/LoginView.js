@@ -1,27 +1,54 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+
 import styles from './styles'
-import PropTypes from 'prop-types'
+import {
+  Keyboard,
+  Button,
+  Text,
+  View,
+  TextInput,
+  TouchableWithoutFeedback,
+  Alert,
+  KeyboardAvoidingView,
+} from 'react-native'
 
-class LoginView extends Component {
-  navigate = () => {
-    this.props.onLogin('username', 'password')
-  }
 
+export default class LoginScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Login</Text>
-        <TouchableOpacity onPress={this.navigate}>
-          <Text>Go to Home</Text>
-        </TouchableOpacity>
-      </View>
+      <KeyboardAvoidingView style={styles.containerView} behavior="padding">
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.loginScreenContainer}>
+            <View style={styles.loginFormView}>
+              <Text style={styles.logoText}>SystemBlad</Text>
+              <TextInput
+                placeholder="Username"
+                placeholderColor="#c4c3cb"
+                style={styles.loginFormTextInput}
+              />
+              <TextInput
+                placeholder="Password"
+                placeholderColor="#c4c3cb"
+                style={styles.loginFormTextInput}
+                secureTextEntry={true}
+              />
+              <Button
+                buttonStyle={styles.loginButton}
+                onPress={() => this.onLoginPress()}
+                title="Login"
+              />
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     )
   }
-}
 
-LoginView.propTypes = {
-  onLogin: PropTypes.func,
-}
+  componentDidMount() {}
 
-export default LoginView
+  componentWillUnmount() {}
+
+  onLoginPress() {
+    this.props.onLogin('username', 'password')
+  }
+}

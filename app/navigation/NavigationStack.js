@@ -7,11 +7,9 @@ const RNApp = createStackNavigator(
   {
     Login: {
       screen: Login,
-      navigationOptions: { header: null, gesturesEnabled: false },
     },
     Home: {
       screen: Home,
-      navigationOptions: { header: null, gesturesEnabled: false },
     },
   },
   {
