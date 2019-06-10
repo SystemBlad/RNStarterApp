@@ -18,6 +18,8 @@ export default {
   },
   loginFormView: {
     flex: 1,
+    margin: 20,
+    padding: 20,
   },
   loginFormTextInput: {
     height: 43,
@@ -33,10 +35,7 @@ export default {
     marginBottom: 5,
   },
   loginButton: {
-    backgroundColor: '#3897f1',
-    borderRadius: 5,
-    height: 45,
-    marginTop: 10,
+    padding: 20,
   },
   fbLoginButton: {
     height: 45,

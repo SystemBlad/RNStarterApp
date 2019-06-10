@@ -3,15 +3,12 @@ import React, { Component } from 'react'
 import styles from './styles'
 import {
   Keyboard,
-  Button,
   Text,
   View,
-  TextInput,
   TouchableWithoutFeedback,
-  Alert,
   KeyboardAvoidingView,
 } from 'react-native'
-
+import { Button, TextInput } from '../../components'
 
 export default class LoginScreen extends Component {
   render() {
@@ -20,7 +17,9 @@ export default class LoginScreen extends Component {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.loginScreenContainer}>
             <View style={styles.loginFormView}>
-              <Text style={styles.logoText}>SystemBlad</Text>
+              <Text onPress={() => this.onLoginPress()} style={styles.logoText}>
+                SystemBlad
+              </Text>
               <TextInput
                 placeholder="Username"
                 placeholderColor="#c4c3cb"
@@ -32,11 +31,9 @@ export default class LoginScreen extends Component {
                 style={styles.loginFormTextInput}
                 secureTextEntry={true}
               />
-              <Button
-                buttonStyle={styles.loginButton}
-                onPress={() => this.onLoginPress()}
-                title="Login"
-              />
+              <Button buttonStyle={styles.loginButton} onPress={() => this.onLoginPress()}>
+                Login
+              </Button>
             </View>
           </View>
         </TouchableWithoutFeedback>
@@ -44,7 +41,8 @@ export default class LoginScreen extends Component {
     )
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+  }
 
   componentWillUnmount() {}
 
