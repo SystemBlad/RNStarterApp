@@ -12,7 +12,7 @@ const RNApp = createStackNavigator(
     },
     CreateAccount: {
       screen: CreateAccount,
-      navigationOptions: { header: null, gesturesEnabled: false },
+      navigationOptions: { gesturesEnabled: false },
     },
     Home: {
       screen: Home,
@@ -21,6 +21,15 @@ const RNApp = createStackNavigator(
   {
     initialRouteName: 'Login',
     cardStyle: { backgroundColor: AppStyles.colors.appBackgroundColor },
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: AppStyles.colors.appBackgroundColor,
+      },
+      headerTintColor: AppStyles.colors.text,
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    },
   }
 )
 
