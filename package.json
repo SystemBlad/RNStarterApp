@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "android.run": "node node_modules/react-native/local-cli/cli.js run-android",
+    "android:run": "node node_modules/react-native/local-cli/cli.js run-android",
     "test": "jest",
     "prettier-fix": "prettier --write **/*.js",
     "prettier-check": "prettier --list-different **/*.js",
     "lint-fix": "eslint --fix .",
     "lint-check": "eslint .",
+    "flow-check": "flow",
     "rename": "react-native-rename"
   },
   "dependencies": {

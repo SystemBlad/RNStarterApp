@@ -5,7 +5,7 @@ import { getStatusBarHeight } from 'react-native-status-bar-height'
 
 const deviceHeight = Dimensions.get('window').height
 
-function MainContainer(props) {
+function MainContainer(props: Object) {
   return <SafeAreaView style={styles.mainContainer} {...props} />
 }
 
