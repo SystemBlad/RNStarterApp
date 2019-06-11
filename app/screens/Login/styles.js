@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
   loginChild: {
     margin: 5,
   },
-
   loginFormTextInput: {
     marginBottom: 5,
     marginLeft: 15,
@@ -33,6 +32,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     paddingLeft: 10,
   },
+
   loginFormView: {
     margin: 20,
     padding: 20,
@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 100,
   },
-
   logoText: {
     fontSize: 26,
     marginBottom: 30,

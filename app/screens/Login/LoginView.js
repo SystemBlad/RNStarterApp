@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react'
-import { Text, withTheme, type Theme } from 'react-native-paper'
+import { Text, type Theme, withTheme } from 'react-native-paper'
 import styles from './styles'
 import { Alert, Keyboard, KeyboardAvoidingView, View } from 'react-native'
 import { Button, TextInput } from '../../components'
@@ -16,9 +16,7 @@ class LoginScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.contentContainer}>
-        <View
-          style={styles.logoContainer}
-        >
+        <View style={styles.logoContainer}>
           <Icon name="rocket" size={80} color={this.props.theme.colors.primary} />
           <Text onPress={() => this.onLoginPress()} style={styles.logoText}>
             Company Logo
@@ -38,8 +36,7 @@ class LoginScreen extends Component<Props> {
                 <TextInput
                   onChangeText={handleChange('userName')}
                   value={values.userName}
-                  label="Username"
-                  placeholder="Username!"
+                  label="User Name"
                   style={styles.inputContainerStyle}
                 />
                 <TextInput
@@ -47,7 +44,6 @@ class LoginScreen extends Component<Props> {
                   value={values.password}
                   label="Password"
                   secureTextEntry={true}
-                  placeholder="Password"
                   style={styles.inputContainerStyle}
                 />
 
