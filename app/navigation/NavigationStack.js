@@ -14,6 +14,7 @@ const RNApp = createStackNavigator(
   },
   {
     initialRouteName: 'Login',
+    cardStyle: { backgroundColor: '#384862' },
   }
 )
 
