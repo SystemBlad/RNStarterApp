@@ -1,20 +1,32 @@
+// @flow
 import React, { Component } from 'react'
-
+import { Text, withTheme, type Theme } from 'react-native-paper'
 import styles from './styles'
-import { Alert, Keyboard, KeyboardAvoidingView, Text, View } from 'react-native'
+import { Alert, Keyboard, KeyboardAvoidingView, View } from 'react-native'
 import { Button, TextInput } from '../../components'
 import { Formik } from 'formik'
+import Icon from 'react-native-vector-icons/FontAwesome'
 
-export default class LoginScreen extends Component {
+type Props = {
+  theme: Theme,
+  onLogin: Function,
+}
+
+class LoginScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.contentContainer}>
-        <KeyboardAvoidingView contentContainerStyle={styles.loginContainer} behavior="position">
+        <View
+          style={styles.logoContainer}
+        >
+          <Icon name="rocket" size={80} color={this.props.theme.colors.primary} />
           <Text onPress={() => this.onLoginPress()} style={styles.logoText}>
             Company Logo
           </Text>
+        </View>
+        <KeyboardAvoidingView behavior="position">
           <Formik
-            initialValues={{ firstName: 'Test', Password: '' }}
+            initialValues={{ firstName: 'Test', userName: '' }}
             onSubmit={(values) => {
               Alert.alert(JSON.stringify(values, null, 2))
               Keyboard.dismiss()
@@ -24,16 +36,17 @@ export default class LoginScreen extends Component {
             {({ handleChange, handleSubmit, values }) => (
               <View style={styles.formContainer}>
                 <TextInput
-                  onChangeText={handleChange('firstName')}
-                  value={values.firstName}
+                  onChangeText={handleChange('userName')}
+                  value={values.userName}
                   label="Username"
                   placeholder="Username!"
                   style={styles.inputContainerStyle}
                 />
                 <TextInput
-                  onChangeText={handleChange('Password')}
-                  value={values.firstName}
+                  onChangeText={handleChange('password')}
+                  value={values.password}
                   label="Password"
+                  secureTextEntry={true}
                   placeholder="Password"
                   style={styles.inputContainerStyle}
                 />
@@ -57,3 +70,5 @@ export default class LoginScreen extends Component {
     this.props.onLogin('username', 'password')
   }
 }
+
+export default withTheme(LoginScreen)

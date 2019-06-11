@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import LoginView from './LoginView'
 import { connect } from 'react-redux'
 import * as loginActions from 'app/actions/loginActions'
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView, SafeAreaView } from 'react-native'
 import styles from './styles'
 class LoginContainer extends Component {
   constructor(props) {
@@ -15,15 +15,11 @@ class LoginContainer extends Component {
 
   render() {
     return (
-      <ScrollView
-        contentContainerStyle={styles.container}
-        keyboardShouldPersistTaps="handled"
-      >
+      <SafeAreaView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <LoginView {...this.props} />
-      </ScrollView>
-    );
+      </SafeAreaView>
+    )
   }
-
 }
 
 function mapStateToProps() {

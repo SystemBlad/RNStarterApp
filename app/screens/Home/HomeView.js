@@ -8,9 +8,7 @@ class HomeView extends Component {
     return (
       <View style={styles.container}>
         <Text>Home</Text>
-        <Button icon="add-a-photo">
-          Press me
-        </Button>
+        <Button icon="add-a-photo">Press me</Button>
       </View>
     )
   }
