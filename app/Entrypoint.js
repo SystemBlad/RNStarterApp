@@ -5,7 +5,7 @@
 import React, { Component } from 'react'
 import { ActivityIndicator, StatusBar, StyleSheet, View } from 'react-native'
 import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/es/integration/react'
+import { PersistGate } from 'redux-persist/integration/react'
 import Navigator from 'app/navigation'
 import configureStore from 'app/store/configureStore'
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
