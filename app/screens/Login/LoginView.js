@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react'
+import * as React from 'react'
 import { Text, type Theme, withTheme } from 'react-native-paper'
 import styles from './styles'
 import { Alert, Keyboard, KeyboardAvoidingView, View } from 'react-native'
@@ -12,7 +12,10 @@ type Props = {
   onLogin: Function,
 }
 
-class LoginScreen extends Component<Props> {
+class LoginScreen extends React.Component<Props> {
+  userNameRef = React.createRef()
+  passwordRef = React.createRef()
+
   render() {
     return (
       <View style={styles.contentContainer}>
@@ -37,14 +40,22 @@ class LoginScreen extends Component<Props> {
                   onChangeText={handleChange('userName')}
                   value={values.userName}
                   label="User Name"
+                  returnKeyType="next"
+                  ref={this.userNameRef}
                   style={styles.inputContainerStyle}
+                  onSubmitEditing={(event) => {
+                    this.passwordRef.current.focus()
+                  }}
                 />
                 <TextInput
                   onChangeText={handleChange('password')}
                   value={values.password}
                   label="Password"
+                  returnKeyType="done"
                   secureTextEntry={true}
+                  ref={this.passwordRef}
                   style={styles.inputContainerStyle}
+                  onSubmitEditing={handleSubmit}
                 />
 
                 <Button onPress={handleSubmit} style={styles.loginButton}>

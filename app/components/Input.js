@@ -1,22 +1,17 @@
 // @flow
 import * as React from 'react'
-import { TextInput as TextInputPaper, withTheme } from 'react-native-paper'
-import type { Theme } from 'react-native-paper'
+import { TextInput as TextInputPaper } from 'react-native-paper'
+import AppStyles from '../Config/styles'
 
-type Props = {
-  theme: Theme,
-}
+const Input = React.forwardRef((props: Props, ref) => (
+  <TextInputPaper
+    underlineColor={AppStyles.colors.underlineColor}
+    ref={ref}
+    // theme={{ fonts: { medium: 'Open Sans' } }}
+    {...props}
+  />
+))
 
-function FancyInput(props: Props) {
-  const { colors } = props.theme
-  return (
-    <TextInputPaper
-      underlineColor={colors.underlineColor}
-      mode="contained"
-      theme={{ fonts: { medium: 'Open Sans' } }}
-      {...props}
-    />
-  )
-}
+Input.displayName = 'Input'
 
-export default withTheme(FancyInput)
+export default Input
