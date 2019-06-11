@@ -17,11 +17,11 @@ const { persistor, store } = configureStore()
 const theme = {
   ...DefaultTheme,
   roundness: 5,
-  dark: false,
+  dark: true,
   colors: {
     ...DefaultTheme.colors,
     primary: AppStyles.colors.primary,
-    accent: AppStyles.colors.accent,
+    // accent: AppStyles.colors.accent,
     background: AppStyles.colors.background,
     placeholder: AppStyles.colors.placeholder,
     text: AppStyles.colors.text,

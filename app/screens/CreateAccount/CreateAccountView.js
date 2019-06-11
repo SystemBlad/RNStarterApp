@@ -6,14 +6,13 @@ import { Alert, Keyboard, KeyboardAvoidingView, View } from 'react-native'
 import { Button, TextInput } from '../../components'
 import { Formik } from 'formik'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import NavigationService from 'app/navigation/NavigationService'
 
 type Props = {
   theme: Theme,
   onLogin: Function,
 }
 
-class LoginScreen extends React.Component<Props> {
+class CreateAccountView extends React.Component<Props> {
   userNameRef = React.createRef()
   passwordRef = React.createRef()
 
@@ -28,7 +27,7 @@ class LoginScreen extends React.Component<Props> {
         </View>
         <KeyboardAvoidingView behavior="position">
           <Formik
-            initialValues={{ firstName: 'Test', userName: '' }}
+            initialValues={{ userName: 'Test', password: '', repeatPassword: '' }}
             onSubmit={(values) => {
               Alert.alert(JSON.stringify(values, null, 2))
               Keyboard.dismiss()
@@ -59,18 +58,23 @@ class LoginScreen extends React.Component<Props> {
                   onSubmitEditing={handleSubmit}
                 />
 
+                <TextInput
+                  onChangeText={handleChange('repeatPassword')}
+                  value={values.repeatPassword}
+                  label="repeatPassword"
+                  returnKeyType="done"
+                  secureTextEntry={true}
+                  ref={this.repeatPasswordRef}
+                  style={styles.inputContainerStyle}
+                  onSubmitEditing={handleSubmit}
+                />
+
                 <Button onPress={handleSubmit} style={styles.loginButton}>
-                  Login
+                  Create Account
                 </Button>
               </View>
             )}
           </Formik>
-          <Button mode="outlined" onPress={this.navigate} style={styles.loginButton}>
-            Create New Account
-          </Button>
-          <Button mode="outlined" style={styles.loginButton}>
-            Forgot Password?
-          </Button>
         </KeyboardAvoidingView>
       </View>
     )
@@ -83,10 +87,6 @@ class LoginScreen extends React.Component<Props> {
   onLoginPress() {
     this.props.onLogin('username', 'password')
   }
-
-  navigate = () => {
-    NavigationService.navigate('CreateAccount')
-  }
 }
 
-export default withTheme(LoginScreen)
+export default withTheme(CreateAccountView)
