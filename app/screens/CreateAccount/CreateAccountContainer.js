@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import * as loginActions from 'app/actions/loginActions'
 import { ScrollView } from 'react-native'
 import { MainContainer } from '../../components'
+import { FluidNavigator, Transition } from 'react-navigation-fluid-transitions'
 import styles from './styles'
 
 class LoginContainer extends Component {
@@ -11,7 +12,9 @@ class LoginContainer extends Component {
     return (
       <MainContainer>
         <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+          <Transition appear='right' Disappear='flip'>
           <CreateAccountView {...this.props} />
+          </Transition>
         </ScrollView>
       </MainContainer>
     )
