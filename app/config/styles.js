@@ -8,7 +8,7 @@ const AppStyles = {
     accent: 'tomato',
     background: 'transparent',
     placeholder: '#8a98a8',
-    text: '#aebed3',
+    text: '#ffffff',
     underlineColor: '#aebed3',
     appBackgroundColor: '#384862',
   },

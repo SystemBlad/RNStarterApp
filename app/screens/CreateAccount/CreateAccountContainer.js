@@ -4,16 +4,22 @@ import { connect } from 'react-redux'
 import * as loginActions from 'app/actions/loginActions'
 import { ScrollView } from 'react-native'
 import { MainContainer } from '../../components'
-import { FluidNavigator, Transition } from 'react-navigation-fluid-transitions'
+import { Transition } from 'react-navigation-fluid-transitions'
 import styles from './styles'
+import { Appbar } from 'react-native-paper'
+import NavigationService from '../../navigation/NavigationService'
 
 class LoginContainer extends Component {
   render() {
     return (
       <MainContainer>
         <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-          <Transition appear='right' Disappear='flip'>
-          <CreateAccountView {...this.props} />
+          <Appbar.Header>
+            <Appbar.Content title="New Account" />
+            <Appbar.BackAction onPress={() => NavigationService.goBack(null)} />
+          </Appbar.Header>
+          <Transition appear="scale">
+            <CreateAccountView {...this.props} />
           </Transition>
         </ScrollView>
       </MainContainer>

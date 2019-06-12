@@ -24,7 +24,6 @@ class CreateAccountView extends React.Component<Props> {
           onSubmit={(values) => {
             Alert.alert(JSON.stringify(values, null, 2))
             Keyboard.dismiss()
-            this.onLoginPress()
           }}
         >
           {({ handleChange, handleSubmit, values }) => (
@@ -75,9 +74,6 @@ class CreateAccountView extends React.Component<Props> {
 
   componentWillUnmount() {}
 
-  onLoginPress() {
-    this.props.onLogin('username', 'password')
-  }
 }
 
 export default withTheme(CreateAccountView)

@@ -33,7 +33,7 @@
       "version": "detect"
     },
     "flowtype": {
-      "onlyFilesWithFlowAnnotation": false
+      "onlyFilesWithFlowAnnotation": true
     }
   },
   "rules": {
