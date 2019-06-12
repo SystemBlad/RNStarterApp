@@ -10,7 +10,7 @@ import Navigator from 'app/navigation'
 import configureStore from 'app/store/configureStore'
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper'
 import { getStatusBarHeight } from 'react-native-status-bar-height'
-import AppStyles from './Config/styles'
+import AppStyles from './config/styles'
 
 const { persistor, store } = configureStore()
 

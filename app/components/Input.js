@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react'
 import { TextInput as TextInputPaper } from 'react-native-paper'
-import AppStyles from '../Config/styles'
+import AppStyles from '../config/styles'
 
 const Input = React.forwardRef((props: Props, ref) => (
   <TextInputPaper
