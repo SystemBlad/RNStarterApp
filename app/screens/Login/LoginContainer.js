@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import LoginView from './LoginView'
 import { connect } from 'react-redux'
 import * as loginActions from 'app/actions/loginActions'
@@ -6,16 +6,14 @@ import { ScrollView } from 'react-native'
 import { MainContainer } from '../../components'
 import styles from './styles'
 
-class LoginContainer extends Component {
-  render() {
-    return (
-      <MainContainer>
-        <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-          <LoginView {...this.props} />
-        </ScrollView>
-      </MainContainer>
-    )
-  }
+function LoginContainer(props: Object) {
+  return (
+    <MainContainer>
+      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+        <LoginView {...props} />
+      </ScrollView>
+    </MainContainer>
+  )
 }
 
 function mapStateToProps() {
