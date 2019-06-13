@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import HomeView from './HomeView'
 import { connect } from 'react-redux'

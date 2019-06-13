@@ -1,9 +1,9 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation'
+import { createAppContainer } from 'react-navigation'
 import AppStyles from '../config/styles'
 import Login from 'app/screens/Login'
 import CreateAccount from 'app/screens/CreateAccount'
 import Home from 'app/screens/Home'
-import { FluidNavigator, Transition } from 'react-navigation-fluid-transitions'
+import { FluidNavigator } from 'react-navigation-fluid-transitions'
 
 const RNApp = FluidNavigator(
   {
