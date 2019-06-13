@@ -58,8 +58,8 @@
 		37AD5023D33B42AB9194E212 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DE317D1755E4BB39FD54768 /* Octicons.ttf */; };
 		3E1377D99D354FC691DFF33D /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FF423BBD78E140769888A590 /* SimpleLineIcons.ttf */; };
 		B543409E4B0E49D792DA7908 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90100D8465D840E5BFA16387 /* Zocial.ttf */; };
-		2849AA84A8874760A1A7986C /* libRNLocalize.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B63207C3D6A6430DB3AFA539 /* libRNLocalize.a */; };
-		8387D84B3E064FE88C544DFC /* libRNLocalize-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD0831FED5C54811A1DBD704 /* libRNLocalize-tvOS.a */; };
+		8D5DF5649ABF43089B9426F3 /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78604D9F956545D2B68BC68A /* libRNI18n.a */; };
+		4FFB4D4729B84F23B6B6A4A9 /* RNI18nTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = 6BC29A7B502748D28E5A8D46 /* RNI18nTests.xctest */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,9 +388,9 @@
 		5DE317D1755E4BB39FD54768 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		FF423BBD78E140769888A590 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		90100D8465D840E5BFA16387 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F14B8BCCC52C452A846A79D0 /* RNLocalize.xcodeproj */ = {isa = PBXFileReference; name = "RNLocalize.xcodeproj"; path = "../node_modules/react-native-localize/ios/RNLocalize.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		B63207C3D6A6430DB3AFA539 /* libRNLocalize.a */ = {isa = PBXFileReference; name = "libRNLocalize.a"; path = "libRNLocalize.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		BD0831FED5C54811A1DBD704 /* libRNLocalize-tvOS.a */ = {isa = PBXFileReference; name = "libRNLocalize-tvOS.a"; path = "libRNLocalize-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		D5C735BC6CC94BBEA433B877 /* RNI18n.xcodeproj */ = {isa = PBXFileReference; name = "RNI18n.xcodeproj"; path = "../node_modules/react-native-locale-detector/RNI18n.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		78604D9F956545D2B68BC68A /* libRNI18n.a */ = {isa = PBXFileReference; name = "libRNI18n.a"; path = "libRNI18n.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		6BC29A7B502748D28E5A8D46 /* RNI18nTests.xctest */ = {isa = PBXFileReference; name = "RNI18nTests.xctest"; path = "RNI18nTests.xctest"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.cfbundle; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,7 +421,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				5BED43C96B1D4870AAA83B68 /* libRNGestureHandler.a in Frameworks */,
 				2F6E998559BC45D2B2C66317 /* libRNVectorIcons.a in Frameworks */,
-				2849AA84A8874760A1A7986C /* libRNLocalize.a in Frameworks */,
+				8D5DF5649ABF43089B9426F3 /* libRNI18n.a in Frameworks */,
+				4FFB4D4729B84F23B6B6A4A9 /* RNI18nTests.xctest in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +617,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				988F79BF6A7449D4BB67C6C0 /* RNGestureHandler.xcodeproj */,
 				31C7E13BDEDC4120A954078E /* RNVectorIcons.xcodeproj */,
-				F14B8BCCC52C452A846A79D0 /* RNLocalize.xcodeproj */,
+				D5C735BC6CC94BBEA433B877 /* RNI18n.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1283,18 +1284,12 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNStarterAPP.app/RNStarterAPP";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Debug;
@@ -1316,18 +1311,12 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNStarterAPP.app/RNStarterAPP";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Release;
@@ -1352,7 +1341,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Debug;
@@ -1376,7 +1365,7 @@
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Release;
@@ -1406,18 +1395,12 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Debug;
@@ -1447,18 +1430,12 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Release;
@@ -1487,18 +1464,12 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Debug;
@@ -1527,18 +1498,12 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)\..\node_modules\react-native-gesture-handler\ios/**",
 					"$(SRCROOT)\..\node_modules\react-native-vector-icons\RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-localize\ios",
+					"$(SRCROOT)\..\node_modules\react-native-locale-detector\RNI18n",
 				);
 			};
 			name = Release;

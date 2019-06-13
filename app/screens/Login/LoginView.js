@@ -7,34 +7,19 @@ import { Button, LogoContainer, TextInput } from '../../components'
 import { Formik } from 'formik'
 import NavigationService from 'app/navigation/NavigationService'
 import { displayLog } from '../../utils/helpers'
-import i18n from 'i18next'
-import en from '../../assets/locales/en'
+import { withTranslation } from 'react-i18next';
 
 type Props = {
   theme: Theme,
   onLogin: Function,
 }
 
-const resources = {
-  en: en,
-  sv: {
-    translation: {
-      hello: 'Hej världen',
-      new_account: '----',
-    },
-  },
-}
-
-i18n.init({
-  resources,
-  lng: 'en',
-})
-
 class LoginScreen extends React.Component<Props> {
   userNameRef = React.createRef()
   passwordRef = React.createRef()
 
   render() {
+    const { t } = this.props;
     return (
       <View style={styles.contentContainer}>
         <LogoContainer />
@@ -77,7 +62,7 @@ class LoginScreen extends React.Component<Props> {
           )}
         </Formik>
         <Button mode="outlined" onPress={this.navigate} style={styles.loginButton}>
-          {i18n.t('new_account')}
+          {t('new_account')}
         </Button>
         <Button mode="outlined" style={styles.loginButton}>
           Forgot Password?
@@ -96,7 +81,7 @@ class LoginScreen extends React.Component<Props> {
   onLoginPress() {
     // this.props.onLogin('username', 'password')
 
-    i18n.changeLanguage(i18n.language === 'sv' ? 'en' : 'sv')
+
   }
 
   navigate = () => {
@@ -120,4 +105,4 @@ class LoginScreen extends React.Component<Props> {
   }
 }
 
-export default withTheme(LoginScreen)
+export default withTranslation()(LoginScreen)

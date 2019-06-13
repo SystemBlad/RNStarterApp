@@ -3,7 +3,7 @@ package com.rnstarterapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.reactcommunity.rnlocalize.RNLocalizePackage;
+import com.i18n.reactnativei18n.ReactNativeI18n;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
@@ -26,7 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNLocalizePackage(),
+            new ReactNativeI18n(),
             new VectorIconsPackage(),
             new RNGestureHandlerPackage()
       );
