@@ -9,6 +9,7 @@ const API_URL = {
 const ApiConstants = {
   BASE_URL: API_URL.product,
   LOGIN: 'users',
+  PRODUCTS: 'PRODUCTS',
 }
 
 export default ApiConstants
