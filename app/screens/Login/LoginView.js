@@ -11,14 +11,15 @@ import { useTranslation } from 'react-i18next'
 type Props = {
   theme: Theme,
   onLogin: Function,
+  isLoading: boolean,
 }
 
 function LoginScreen(props: Props) {
   const userNameRef = React.createRef()
   const passwordRef = React.createRef()
 
-  function onLoginPress() {
-    props.onLogin('username', 'password')
+  function onLoginPress(values) {
+    props.onLogin(values.userName, values.password)
   }
 
   const navigate = () => {
@@ -29,11 +30,11 @@ function LoginScreen(props: Props) {
     <View style={styles.contentContainer}>
       <LogoContainer />
       <Formik
-        initialValues={{ firstName: 'Test', userName: '' }}
+        initialValues={{ userName: '', password: '' }}
         onSubmit={(values) => {
           // Alert.alert(JSON.stringify(values, null, 2))
           Keyboard.dismiss()
-          onLoginPress()
+          onLoginPress(values)
         }}
       >
         {({ handleChange, handleSubmit, values }) => (
@@ -62,7 +63,7 @@ function LoginScreen(props: Props) {
               onSubmitEditing={handleSubmit}
             />
 
-            <Button onPress={handleSubmit} style={styles.loginButton}>
+            <Button loading={props.isLoading} onPress={handleSubmit} style={styles.loginButton}>
               Login
             </Button>
           </View>

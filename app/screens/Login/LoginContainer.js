@@ -17,9 +17,9 @@ function LoginContainer(props: Object) {
   )
 }
 
-function mapStateToProps() {
-  return {}
-}
+const mapStateToProps = (state) => ({
+  isLoading: state.loadingReducer.isLoginLoading,
+})
 
 function mapDispatchToProps(dispatch) {
   return {

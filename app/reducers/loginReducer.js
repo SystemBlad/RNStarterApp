@@ -6,7 +6,7 @@ import * as types from 'app/actions/types'
 
 const initialState = {
   isLoggedIn: false,
-  id: -1,
+  loggedUser: {},
   username: '',
   password: '',
 }
@@ -25,7 +25,8 @@ export const loginReducer = createReducer(initialState, {
   [types.LOGIN_RESPONSE](state, action) {
     return {
       ...state,
-      id: action.response.id,
+      loggedUser: action.response,
+      isLoggedIn: true,
     }
   },
   [types.LOGIN_FAILED](state) {

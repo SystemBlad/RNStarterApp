@@ -27,9 +27,9 @@ function HomeContainer(props: Object) {
   )
 }
 
-function mapStateToProps() {
-  return {}
-}
+const mapStateToProps = (state) => ({
+  loggedUser: state.loginReducer.loggedUser,
+})
 
 function mapDispatchToProps() {
   return {}
