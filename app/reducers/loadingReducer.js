@@ -7,6 +7,7 @@ import * as types from 'app/actions/types'
 
 const initialState = {
   isLoginLoading: false,
+  isLoadingProducts: false,
 }
 
 export const loadingReducer = createReducer(initialState, {
@@ -15,5 +16,11 @@ export const loadingReducer = createReducer(initialState, {
   },
   [types.LOGIN_DISABLE_LOADER](state) {
     return { ...state, isLoginLoading: false }
+  },
+  [types.GET_PRODUCTS_ENABLE_LOADER](state) {
+    return { ...state, isLoadingProducts: true }
+  },
+  [types.GET_PRODUCTS_DISABLE_LOADER](state) {
+    return { ...state, isLoadingProducts: false }
   },
 })

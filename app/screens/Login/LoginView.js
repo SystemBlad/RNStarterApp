@@ -30,7 +30,7 @@ function LoginScreen(props: Props) {
     <View style={styles.contentContainer} pointerEvents={props.isLoading ? 'none' : 'auto'}>
       <LogoContainer />
       <Formik
-        initialValues={{ userName: '', password: '' }}
+        initialValues={{ userName: 'Jaimel', password: '1234' }}
         onSubmit={(values) => {
           // Alert.alert(JSON.stringify(values, null, 2))
           Keyboard.dismiss()

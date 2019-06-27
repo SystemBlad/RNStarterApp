@@ -3,6 +3,7 @@
  */
 import createReducer from 'app/lib/createReducer'
 import * as types from 'app/actions/types'
+import { displayLog } from '../utils/helpers'
 
 const initialState = {
   isLoggedIn: false,
@@ -23,6 +24,7 @@ export const loginReducer = createReducer(initialState, {
     return { ...state }
   },
   [types.LOGIN_RESPONSE](state, action) {
+    displayLog('action.response', action.response)
     return {
       ...state,
       loggedUser: action.response,

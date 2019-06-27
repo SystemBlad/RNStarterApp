@@ -8,6 +8,7 @@ import styles from '../CreateAccount/styles'
 import NavigationService from '../../navigation/NavigationService'
 import { Transition } from 'react-navigation-fluid-transitions'
 import { ScrollView } from 'react-native'
+import * as productsActions from '../../actions/productsActions'
 
 function HomeContainer(props: Object) {
   return (
@@ -29,10 +30,14 @@ function HomeContainer(props: Object) {
 
 const mapStateToProps = (state) => ({
   loggedUser: state.loginReducer.loggedUser,
+  // products: state.productsReducer.products,
+  isLoadingProducts: state.loadingReducer.isLoadingProducts,
 })
 
-function mapDispatchToProps() {
-  return {}
+function mapDispatchToProps(dispatch) {
+  return {
+    onLogin: (un, pwd) => dispatch(productsActions.requestGetProducts()),
+  }
 }
 
 export default connect(

@@ -2,6 +2,7 @@
  * Reducer actions related with login
  */
 import * as types from './types'
+import { displayLog } from '../utils/helpers'
 
 export function requestLogin(username, password) {
   return {
@@ -18,6 +19,7 @@ export function loginFailed() {
 }
 
 export function onLoginResponse(response) {
+  displayLog('action.response', response)
   return {
     type: types.LOGIN_RESPONSE,
     response,
