@@ -30,8 +30,7 @@ export default function* loginAsync(action) {
   } else {
     yield put(loginActions.loginFailed())
     yield put(loginActions.disableLoader({}))
-    setTimeout(() => {
-      Alert.alert('BoilerPlate', 'Login Fail')
-    }, 200)
+
+    Alert.alert('BoilerPlate', 'Login Fail')
   }
 }

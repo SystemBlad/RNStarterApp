@@ -27,7 +27,7 @@ function LoginScreen(props: Props) {
   }
   const { t } = useTranslation()
   return (
-    <View style={styles.contentContainer}>
+    <View style={styles.contentContainer} pointerEvents={props.isLoading ? 'none' : 'auto'}>
       <LogoContainer />
       <Formik
         initialValues={{ userName: '', password: '' }}

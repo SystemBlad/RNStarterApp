@@ -1,8 +1,8 @@
 // @flow
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import styles from './styles'
-import Button from '../../components/Button'
+import { Button, Text } from '../../components'
 type Props = {
   loggedUser: Object,
 }
@@ -11,7 +11,7 @@ function HomeView(props: Props) {
     <View style={styles.contentContainer}>
       <Text>Welcome:</Text>
       <Text>{`${props.loggedUser.firstName}${' '}${props.loggedUser.lastName}`}</Text>
-      <Button icon="add-a-photo">Press me</Button>
+      <Button icon="add-a-photo">Press me. To take a picture of you</Button>
     </View>
   )
 }
