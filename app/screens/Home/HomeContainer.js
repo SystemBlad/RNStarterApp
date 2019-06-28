@@ -1,5 +1,5 @@
 // @flow
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomeView from './HomeView'
 import { connect } from 'react-redux'
 import { MainContainer } from '../../components'
@@ -9,8 +9,16 @@ import NavigationService from '../../navigation/NavigationService'
 import { Transition } from 'react-navigation-fluid-transitions'
 import { ScrollView } from 'react-native'
 import * as productsActions from '../../actions/productsActions'
+import { displayLog } from '../../utils/helpers'
 
 function HomeContainer(props: Object) {
+  useEffect(() => {
+    displayLog('useEffect')
+    const fetchData = async () => {
+      props.requestGetProducts()
+    }
+    fetchData()
+  }, [])
   return (
     <MainContainer>
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">

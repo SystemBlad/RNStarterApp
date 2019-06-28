@@ -1,9 +1,8 @@
 // @flow
-import React, { useEffect } from 'react'
-import { View, FlatList } from 'react-native'
+import React from 'react'
+import { View, FlatList, Image, StyleSheet } from 'react-native'
 import styles from './styles'
 import { Button, Text } from '../../components'
-// import { displayLog } from '../../utils/helpers'
 type Props = {
   loggedUser: Object,
   requestGetProducts: Function,
@@ -11,10 +10,7 @@ type Props = {
   isLoadingProducts: boolean,
 }
 function HomeView(props: Props) {
-  useEffect(() => {
-    // displayLog('useEffect')
-    // props.requestGetProducts()
-  })
+  const _keyExtractor = (item, index) => item.productId.toString()
   return (
     <View style={styles.contentContainer}>
       <Text>Welcome:</Text>
@@ -26,11 +22,29 @@ function HomeView(props: Props) {
         }}
         icon="add-a-photo"
       >
-        Press me. To load products
+        Press me. To reload products
       </Button>
-      <FlatList data={props.products} renderItem={({ item }) => <Text>{item.name}</Text>} />
+      <FlatList
+        data={props.products}
+        keyExtractor={_keyExtractor}
+        renderItem={({ item }) => (
+          <View>
+            <Text>{item.productName}</Text>
+            <Image style={localStyles.stretch} source={{ uri: item.imageUrl }} />
+            <Text>{item.description}</Text>
+            <Text>{item.price}</Text>
+          </View>
+        )}
+      />
     </View>
   )
 }
+
+const localStyles = StyleSheet.create({
+  stretch: {
+    height: 200,
+    width: '80%',
+  },
+})
 
 export default HomeView

@@ -15,4 +15,10 @@ export const productsReducer = createReducer(initialState, {
       products: action.response,
     }
   },
+  [types.GET_PRODUCTS_REQUEST](state, action) {
+    return {
+      ...state,
+      products: [],
+    }
+  },
 })

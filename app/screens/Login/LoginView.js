@@ -63,7 +63,12 @@ function LoginScreen(props: Props) {
               onSubmitEditing={handleSubmit}
             />
 
-            <Button loading={props.isLoading} onPress={handleSubmit} style={styles.loginButton}>
+            <Button
+              icon="lock-open"
+              loading={props.isLoading}
+              onPress={handleSubmit}
+              style={styles.loginButton}
+            >
               Login
             </Button>
           </View>
