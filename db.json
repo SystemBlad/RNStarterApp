@@ -17,52 +17,54 @@
   ],
   "products": [
     {
-      "name": "hero Product",
-      "detail": "Lorem ipsum dolor sit amet",
-      "price": "99",
-      "hero": "OMG This just came out today!",
-      "image": "http://placehold.it/940x300/999/CCC"
+      "productId": 1,
+      "productName": "Leaf Rake",
+      "productCode": "GDN-0011",
+      "releaseDate": "March 19, 2016",
+      "description": "Leaf rake with 48-inch wooden handle.",
+      "price": 19.95,
+      "starRating": 3.2,
+      "imageUrl": "https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
     },
     {
-      "name": "Product 1",
-      "detail": "Lorem ipsum dolor sit amet",
-      "price": "99",
-      "info": "This is the latest and greatest product from Derp corp.",
-      "image": "http://placehold.it/300x300/999/CCC"
+      "productId": 2,
+      "productName": "Garden Cart",
+      "productCode": "GDN-0023",
+      "releaseDate": "March 18, 2016",
+      "description": "15 gallon capacity rolling garden cart",
+      "price": 32.99,
+      "starRating": 4.2,
+      "imageUrl": "https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
     },
     {
-      "name": "Product 2",
-      "detail": "Lorem ipsum dolor sit amet",
-      "price": "99",
-      "offer": "BOGOF",
-      "image": "http://placehold.it/300x300/999/CCC"
+      "productId": 5,
+      "productName": "Hammer",
+      "productCode": "TBX-0048",
+      "releaseDate": "May 21, 2016",
+      "description": "Curved claw steel hammer",
+      "price": 8.9,
+      "starRating": 4.8,
+      "imageUrl": "https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
     },
     {
-      "name": "Product 3",
-      "detail": "Lorem ipsum dolor sit amet",
-      "price": "99",
-      "image": "http://placehold.it/300x300/999/CCC"
+      "productId": 8,
+      "productName": "Saw",
+      "productCode": "TBX-0022",
+      "releaseDate": "May 15, 2016",
+      "description": "15-inch steel blade hand saw",
+      "price": 11.55,
+      "starRating": 3.7,
+      "imageUrl": "https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
     },
     {
-      "name": "Product 4",
-      "detail": "Lorem ipsum dolor sit amet",
-      "price": "99",
-      "offer": "No srsly GTFO",
-      "image": "http://placehold.it/300x300/999/CCC"
-    },
-    {
-      "name": "Product 5",
-      "detail": "Lorem ipsum dolor sit amet",
-      "price": "99",
-      "image": "http://placehold.it/300x300/999/CCC"
-    },
-    {
-      "name": "Product 6",
-      "detail": "Lorem ipsum dolor sit amet",
-      "price": "99",
-      "info": "This is the latest and greatest product from Derp corp.",
-      "offer": "info with offer",
-      "image": "http://placehold.it/300x300/999/CCC"
+      "productId": 10,
+      "productName": "Video Game Controller",
+      "productCode": "GMG-0042",
+      "releaseDate": "October 15, 2015",
+      "description": "Standard two-button video game controller",
+      "price": 35.95,
+      "starRating": 4.6,
+      "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
   ]
 }
