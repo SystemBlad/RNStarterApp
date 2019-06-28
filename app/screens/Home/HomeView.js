@@ -3,11 +3,12 @@ import React, { useEffect } from 'react'
 import { View, FlatList } from 'react-native'
 import styles from './styles'
 import { Button, Text } from '../../components'
-import { displayLog } from '../../utils/helpers'
+// import { displayLog } from '../../utils/helpers'
 type Props = {
   loggedUser: Object,
   requestGetProducts: Function,
   products: Object,
+  isLoadingProducts: boolean,
 }
 function HomeView(props: Props) {
   useEffect(() => {
@@ -19,17 +20,15 @@ function HomeView(props: Props) {
       <Text>Welcome:</Text>
       <Text>{`${props.loggedUser.firstName}${' '}${props.loggedUser.lastName}`}</Text>
       <Button
+        loading={props.isLoadingProducts}
         onPress={() => {
           props.requestGetProducts()
         }}
         icon="add-a-photo"
       >
-        Press me. To take a picture of you
+        Press me. To load products
       </Button>
-      <FlatList
-        data={props.products}
-        renderItem={({item}) => <Text>{item.name}</Text>}
-      />
+      <FlatList data={props.products} renderItem={({ item }) => <Text>{item.name}</Text>} />
     </View>
   )
 }
