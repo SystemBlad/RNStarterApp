@@ -24,6 +24,7 @@ export default function* loginAsync(action) {
   if (!isEmpty(response)) {
     displayLog('response.data', response)
     yield put(productsActions.disableLoader({}))
+    yield put(productsActions.onGetProductsResponse(response))
   } else {
     yield put(productsActions.disableLoader({}))
 

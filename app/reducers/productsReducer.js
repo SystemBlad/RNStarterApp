@@ -8,7 +8,7 @@ const initialState = {
   products: [],
 }
 
-export const loginReducer = createReducer(initialState, {
+export const productsReducer = createReducer(initialState, {
   [types.GET_PRODUCTS_RESPONSE](state, action) {
     return {
       ...state,

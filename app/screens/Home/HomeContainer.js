@@ -30,13 +30,13 @@ function HomeContainer(props: Object) {
 
 const mapStateToProps = (state) => ({
   loggedUser: state.loginReducer.loggedUser,
-  // products: state.productsReducer.products,
+  products: state.productsReducer.products,
   isLoadingProducts: state.loadingReducer.isLoadingProducts,
 })
 
 function mapDispatchToProps(dispatch) {
   return {
-    onLogin: (un, pwd) => dispatch(productsActions.requestGetProducts()),
+    requestGetProducts: (un, pwd) => dispatch(productsActions.requestGetProducts()),
   }
 }
 
