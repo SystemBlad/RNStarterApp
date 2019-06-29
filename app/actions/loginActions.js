@@ -37,3 +37,9 @@ export function disableLoader() {
     type: types.LOGIN_DISABLE_LOADER,
   }
 }
+
+export function logout() {
+  return {
+    type: types.LOGIN_LOGOUT,
+  }
+}

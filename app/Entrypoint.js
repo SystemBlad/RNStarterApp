@@ -22,11 +22,12 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     primary: AppStyles.colors.primary,
-    // accent: AppStyles.colors.accent,
+    accent: AppStyles.colors.accent,
     background: AppStyles.colors.background,
     placeholder: AppStyles.colors.placeholder,
     text: AppStyles.colors.text,
     underlineColor: AppStyles.colors.underlineColor,
+    surface: AppStyles.colors.appBackgroundColor,
   },
 }
 

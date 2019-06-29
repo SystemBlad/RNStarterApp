@@ -37,4 +37,11 @@ export const loginReducer = createReducer(initialState, {
       isLoggedIn: false,
     }
   },
+  [types.LOGIN_LOGOUT](state) {
+    return {
+      ...state,
+      isLoggedIn: false,
+      loggedUser: {},
+    }
+  },
 })

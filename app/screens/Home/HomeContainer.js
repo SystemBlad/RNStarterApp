@@ -9,6 +9,7 @@ import NavigationService from '../../navigation/NavigationService'
 import { Transition } from 'react-navigation-fluid-transitions'
 import { ScrollView } from 'react-native'
 import * as productsActions from '../../actions/productsActions'
+import * as loginActions from '../../actions/loginActions'
 import { displayLog } from '../../utils/helpers'
 
 function HomeContainer(props: Object) {
@@ -24,8 +25,19 @@ function HomeContainer(props: Object) {
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <Transition appear="top">
           <Appbar.Header>
-            <Appbar.Content title="Home Screen" />
-            <Appbar.BackAction onPress={() => NavigationService.goBack(null)} />
+            <Appbar.Content
+              title="Home Screen"
+              subtitle={`${'Welcome: '}${props.loggedUser.firstName}${' '}${
+                props.loggedUser.lastName
+              }`}
+            />
+            <Appbar.Action
+              icon="more-vert"
+              onPress={() => {
+                props.logout()
+                NavigationService.goBack(null)
+              }}
+            />
           </Appbar.Header>
         </Transition>
         <Transition appear="right">
@@ -45,6 +57,7 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
   return {
     requestGetProducts: (un, pwd) => dispatch(productsActions.requestGetProducts()),
+    logout: () => dispatch(loginActions.logout()),
   }
 }
 

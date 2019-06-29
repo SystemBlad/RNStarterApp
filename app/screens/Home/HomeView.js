@@ -2,20 +2,22 @@
 import React from 'react'
 import { View, FlatList, Image, StyleSheet } from 'react-native'
 import styles from './styles'
+import { Avatar, Card, Title, Paragraph } from 'react-native-paper'
 import { Button, Text } from '../../components'
+
 type Props = {
   loggedUser: Object,
   requestGetProducts: Function,
   products: Object,
   isLoadingProducts: boolean,
 }
+
 function HomeView(props: Props) {
-  const _keyExtractor = (item, index) => item.productId.toString()
+  const _keyExtractor = (item) => (item.productId ? item.productId.toString() : '')
   return (
     <View style={styles.contentContainer}>
-      <Text>Welcome:</Text>
-      <Text>{`${props.loggedUser.firstName}${' '}${props.loggedUser.lastName}`}</Text>
       <Button
+        mode="outlined"
         loading={props.isLoadingProducts}
         onPress={() => {
           props.requestGetProducts()
@@ -28,12 +30,17 @@ function HomeView(props: Props) {
         data={props.products}
         keyExtractor={_keyExtractor}
         renderItem={({ item }) => (
-          <View>
-            <Text>{item.productName}</Text>
-            <Image style={localStyles.stretch} source={{ uri: item.imageUrl }} />
-            <Text>{item.description}</Text>
-            <Text>{item.price}</Text>
-          </View>
+          <Card style={styles.card}>
+            <Card.Cover source={{ uri: item.imageUrl }} />
+            <Card.Title
+              title={item.productName}
+              subtitle={item.price}
+              left={(props: any) => <Avatar.Icon {...props} icon="folder" />}
+            />
+            <Card.Content>
+              <Paragraph>{item.description}</Paragraph>
+            </Card.Content>
+          </Card>
         )}
       />
     </View>
