@@ -32,7 +32,7 @@ function HomeContainer(props: Object) {
               }`}
             />
             <Appbar.Action
-              icon="more-vert"
+              icon="reply-all"
               onPress={() => {
                 props.logout()
                 NavigationService.goBack(null)
@@ -56,7 +56,7 @@ const mapStateToProps = (state) => ({
 
 function mapDispatchToProps(dispatch) {
   return {
-    requestGetProducts: (un, pwd) => dispatch(productsActions.requestGetProducts()),
+    requestGetProducts: () => dispatch(productsActions.requestGetProducts()),
     logout: () => dispatch(loginActions.logout()),
   }
 }

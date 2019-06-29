@@ -1,9 +1,9 @@
 // @flow
 import React from 'react'
-import { View, FlatList, Image, StyleSheet } from 'react-native'
+import { View, FlatList } from 'react-native'
 import styles from './styles'
-import { Avatar, Card, Title, Paragraph } from 'react-native-paper'
-import { Button, Text } from '../../components'
+import { Avatar, Card, Paragraph } from 'react-native-paper'
+import { Button } from '../../components'
 
 type Props = {
   loggedUser: Object,
@@ -46,12 +46,5 @@ function HomeView(props: Props) {
     </View>
   )
 }
-
-const localStyles = StyleSheet.create({
-  stretch: {
-    height: 200,
-    width: '80%',
-  },
-})
 
 export default HomeView
