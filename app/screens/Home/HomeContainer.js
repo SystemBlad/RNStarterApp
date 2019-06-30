@@ -11,6 +11,7 @@ import { ScrollView } from 'react-native'
 import * as productsActions from '../../actions/productsActions'
 import * as loginActions from '../../actions/loginActions'
 import { displayLog } from '../../utils/helpers'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 function HomeContainer(props: Object) {
   useEffect(() => {
@@ -32,7 +33,9 @@ function HomeContainer(props: Object) {
               }`}
             />
             <Appbar.Action
-              icon="reply-all"
+              icon={({ size, color }) => (
+                <MaterialCommunityIcons name={'logout-variant'} size={size} color={color} />
+              )}
               onPress={() => {
                 props.logout()
                 NavigationService.goBack(null)
