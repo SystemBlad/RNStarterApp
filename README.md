@@ -79,6 +79,7 @@ To create a new project using the boilerplate:
 - remove the previous git history: `rm -rf .git/`
 - install the npm dependencies by running `yarn`
 - rename the React Native project to your own project name: `yarn run rename -- <YourProjectName>` (the default name is `Boilerplate`)
+react-native-rename "Shopping Cart" -b systemblad.shopping.com
 - remove the LICENSE file and the "License" section from the README if your project is not open source
 
 Feel free to remove the section "Using the boilerplate" from the README (you will not need it anymore in your project). You are encouraged to keep the rest of the documentation in your project so that it is self-explanatory.
