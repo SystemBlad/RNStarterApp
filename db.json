@@ -2,10 +2,10 @@
   "users": [
     {
       "id": 1,
-      "userName": "Jaimel",
+      "userName": "usertest",
       "password": "1234",
-      "firstName": "Jaime",
-      "lastName": "Luna"
+      "firstName": "Juan",
+      "lastName": "Test"
     },
     {
       "id": 2,
